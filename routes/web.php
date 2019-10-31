@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+/* Navbar Menu */
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('discover', 'HomeController@discover')->name('discover');
+Route::get('blogs', 'HomeController@blogs')->name('blogs');
+Route::get('about', 'HomeController@aboutus')->name('aboutus');
+Route::get('login_page', 'Auth\LoginController@login_page')->name('login_page');
+
+// Harusnya ntar bisa pas login
+Route::get('plan', 'HomeController@plan_now')->name('plan_now');
+
+

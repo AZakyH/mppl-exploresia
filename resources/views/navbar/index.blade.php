@@ -5,20 +5,20 @@ Exploresia
 @endsection
 
 @section('navbar')
-@include('layout.navbar')
+@include('layout.navbar-index')
 @endsection
 
 @section('content')
     <!-- gambar bg awal -->
     <div class="hero-wrap js-fullheight" style="background-image: url('vacation/images/beach_1.jpg');" data-stellar-background-ratio="0.5">
-        <div class="filterputih"></div>
+        <div class="filterorange"></div>
         <!-- <div class="overlay"></div> -->
         <div class="container">
           <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-9 text text-left ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
               <h1 data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="font-weight: bold;">Explore
               </br>the Limits.</h1>
-              <a class="expl-button" style="color: white;">plan now</a>
+            <a class="expl-button" style="color: white;" href="{{ route('plan_now') }}">plan now</a>
             </div>
           </div>
         </div>
@@ -141,3 +141,6 @@ Exploresia
 
 @endsection
 
+@section('footer')
+@include('layout.footer')
+@endsection

@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-expl" id="ftco-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       {{-- <a class="navbar-brand" style="background-color: transparent; color: #ff7b00;" href="{{ route('index') }}">Exploresia</a> --}}
       <a class="navbar-brand" style="background-color: transparent;" href="{{ route('index') }}"><img src="{{ url('vacation/images/exploresia_logo.png') }}" height="90"></a>

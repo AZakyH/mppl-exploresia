@@ -36,4 +36,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function login_page()
+    {
+        return view('navbar.login_page');
+    }
 }
