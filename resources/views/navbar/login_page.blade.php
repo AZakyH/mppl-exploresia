@@ -17,8 +17,12 @@ Exploresia
           <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-9 text text-left ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
               <div class="jumbotron-login">
-                <h1 data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="font-weight: bold; background-color:white; border-radius: 1rem 0px 0px 1rem;" class="col-md-6">Explore
-                </br>the Limits.</h1>
+                <div data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="font-weight: bold;">
+                  <div class="col-md-6" style="background-color:white; border-radius: 1rem 0px 0px 1rem;">
+                    <img src="{{ url('vacation/images/exploresia_logo.png') }}" height="90">
+                    <p style="color:black;">Login to get the full experience with exploresia</p>
+                  </div>
+                </div>
               </div>
               <a class="expl-button" style="color: white;" href="{{ route('plan_now') }}">plan now</a>
             </div>
