@@ -26,3 +26,7 @@ Route::get('login_page', 'Auth\LoginController@login_page')->name('login_page');
 Route::get('plan', 'HomeController@plan_now')->name('plan_now');
 
 
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

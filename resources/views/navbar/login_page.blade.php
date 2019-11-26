@@ -18,13 +18,19 @@ Exploresia
             <div class="col-md-9 text text-left ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
               <div class="jumbotron-login">
                 <div data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="font-weight: bold;">
-                  <div class="col-md-6" style="background-color:white; border-radius: 1rem 0px 0px 1rem;">
-                    <img src="{{ url('vacation/images/exploresia_logo.png') }}" height="90">
-                    <p style="color:black;">Login to get the full experience with exploresia</p>
+                  <div class="col-md-6 justify-content-center" style="background-color:white; border-radius: 1rem 0px 0px 1rem;">
+                    <div class="row align-items-center">
+                      <img src="{{ url('vacation/images/exploresia_logo.png') }}" height="100">
+                      <div style="color:black; font-size:12px;">Login to get the full experience with exploresia</div>
+                    </div>
+                    <div class="row">
+                      <input type="text" class="form-group form-control" placeholder="Username">
+                      <input type="text" class="form-group form-control" placeholder="Password">
+                      <a class="expl-button" style="color: white;" href="#">Sign In</a>
+                    </div>
                   </div>
                 </div>
               </div>
-              <a class="expl-button" style="color: white;" href="{{ route('plan_now') }}">plan now</a>
             </div>
           </div>
         </div>
