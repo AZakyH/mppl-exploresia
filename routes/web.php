@@ -21,6 +21,8 @@ Route::get('discover', 'HomeController@discover')->name('discover');
 Route::get('blogs', 'HomeController@blogs')->name('blogs');
 Route::get('about', 'HomeController@aboutus')->name('aboutus');
 Route::get('login_page', 'Auth\LoginController@login_page')->name('login_page');
+Route::get('/read_post-{id}', 'BlogController@read')->name('read_post');
+Route::get('/read_discover-{id}', 'DiscoverController@read')->name('read_discover');
 
 /* Login dan Logout */
 Route::post('login', 'Auth\LoginController@authenticate')->name('login');
@@ -45,9 +47,11 @@ Route::group(['middleware' => 'App\Http\Middleware\UserMiddleware'], function()
     /* Kelengkapan Blog */
     Route::get('make_blog', 'BlogController@make_page')->name('make_blog');
     Route::post('posting', 'BlogController@create')->name('posting');
-    Route::get('/read_post-{id}', 'BlogController@read')->name('read_post');
-
     
+    /* Kelengkapan Discover */
+    Route::get('make_discover', 'DiscoverController@make_page')->name('make_discover');
+    Route::post('discover', 'DiscoverController@create')->name('discover');
+
 });
 
 

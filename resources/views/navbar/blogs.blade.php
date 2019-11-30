@@ -1,7 +1,7 @@
 @extends('layout.master-index')
 
 @section('title')
-Blogs by Exploresia
+Discover by Exploresia
 @endsection
 
 @section('blogs')
@@ -59,12 +59,9 @@ active
             <p style="color:white;">{{ $blogs['i']++ }}</p>
           @endforeach
           </div>
-          {{-- end of row 1 --}}
-          
-        {{-- </div> --}}
+          {{-- end of row 1 --}}          
     </section>
     {{-- discover section end --}}
-
 @endsection
 
 @section('footer')

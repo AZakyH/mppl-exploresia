@@ -16,84 +16,46 @@ active
     {{-- discover section --}}
 		<section class="ftco-section">
         <div class="container">
-          <div class="row justify-content-center pb-4">
-            <div class="col-md-12 heading-section text-center ftco-animate">
-              <h2 class="mb-4" style="color: #ff7b00;">discover exploresia</h2>
-              <p>jelajahi dunia dimulai dengan rekomendasi oleh exploresia</p>
+            <div class="row justify-content-center pb-4">
+              <div class="col-md-12 heading-section text-center ftco-animate">
+                <h2 class="mb-4" style="color: #ff7b00;">discover exploresia</h2>
+                <p>jelajahi dunia dimulai dengan rekomendasi oleh exploresia</p>
+              </div>
             </div>
-          </div>
           {{-- row 1 --}}
           <div class="row justify-content-center">
+            @foreach($discover['data'] as $data)
+            @if($discover['i'] < 4)
             <div class="col-md-3 ftco-animate">
               <div class="project-destination">
-                <a href="#" class="img" style="background-image: url(vacation/images/place-1.jpg);">
+                <a href="{{ route('read_discover',['id'=>$data->id_discover]) }}" class="img" style="background-image: url(vacation/images/place-2.jpg);">
                   <div class="text">
-                    {{-- <h3>Singapore</h3> --}}
-                    <span>Jelajah pulau : Bali #01</span>
+                    <span>{{ $data->judul_discover }}</span>
                   </div>
                 </a>
               </div>
             </div>
+            @elseif($discover['i'] == 3)
+            </div>
+            <div class="row justify-content-center">
+            @elseif($discover['i'] < 7)
             <div class="col-md-3 ftco-animate">
               <div class="project-destination">
-                <a href="#" class="img" style="background-image: url(vacation/images/place-2.jpg);">
+                <a href="{{ route('read_discover',['id'=>$data->id_discover]) }}" class="img" style="background-image: url(vacation/images/place-2.jpg);">
                   <div class="text">
-                    {{-- <h3>Canada</h3> --}}
-                    <span>Tempat menarik yang memorable</span>
+                      {{-- <h3>Singapore</h3> --}}
+                    <span>{{ $data->judul_discover }}</span>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="col-md-3 ftco-animate">
-              <div class="project-destination">
-                <a href="#" class="img" style="background-image: url(vacation/images/place-3.jpg);">
-                  <div class="text">
-                    {{-- <h3>Thailand</h3> --}}
-                    <span>Spot diving terbaik</span>
-                  </div>
-                </a>
-              </div>
-            </div>
+            @endif
+            <p style="color:white;">{{ $discover['i']++ }}</p>
+          @endforeach
           </div>
-          {{-- end of row 1 --}}
-          {{-- row 2 --}}
-          <div class="row justify-content-center">
-            <div class="col-md-3 ftco-animate">
-              <div class="project-destination">
-                <a href="#" class="img" style="background-image: url(vacation/images/place-1.jpg);">
-                  <div class="text">
-                    {{-- <h3>Singapore</h3> --}}
-                    <span>Jelajah pulau : Bali #01</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3 ftco-animate">
-              <div class="project-destination">
-                <a href="#" class="img" style="background-image: url(vacation/images/place-2.jpg);">
-                  <div class="text">
-                    {{-- <h3>Canada</h3> --}}
-                    <span>Tempat menarik yang memorable</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3 ftco-animate">
-              <div class="project-destination">
-                <a href="#" class="img" style="background-image: url(vacation/images/place-3.jpg);">
-                  <div class="text">
-                    {{-- <h3>Thailand</h3> --}}
-                    <span>Spot diving terbaik</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          {{-- end of row 2 --}}
-        </div>
+          {{-- end of row 1 --}}          
     </section>
     {{-- discover section end --}}
-
 @endsection
 
 @section('footer')

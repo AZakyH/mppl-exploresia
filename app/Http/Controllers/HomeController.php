@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 /* Tambahanku */
 use App\Post;
+use App\Discover;
 
 class HomeController extends Controller
 {
@@ -35,7 +36,11 @@ class HomeController extends Controller
     }
     public function discover()
     {
-        return view('navbar.discover');
+        $discover = new Discover();
+        $discover = $discover->show6();
+        
+        return view('navbar.discover', ['discover'=>$discover]);
+        // return view('navbar.discover');
     }
     public function blogs()
     {
