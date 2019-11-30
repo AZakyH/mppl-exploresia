@@ -11,7 +11,15 @@
           <li class="nav-item @yield('discover')"><a href="{{ route('discover') }}" class="nav-link">discover</a></li>
           <li class="nav-item @yield('blogs')"><a href="{{ route('blogs') }}" class="nav-link">blogs</a></li>
           <li class="nav-item @yield('about-us')"><a href="{{ route('aboutus') }}" class="nav-link">about us</a></li>
+          @auth
+          <li class="nav-item @yield('discover')"><a href="{{ route('discover') }}" class="nav-link">profile</a></li>
+          @endauth
+          @guest
           <li class="nav-item cta"><a href="{{ route('login_page') }}" class="nav-link">login</a></li>
+          @endguest
+          @auth
+          <li class="nav-item cta"><a href="{{ route('logout') }}" class="nav-link">logout</a></li>              
+          @endauth
 
         </ul>
       </div>

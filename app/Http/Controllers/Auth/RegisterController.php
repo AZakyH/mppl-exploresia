@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+/* Tambahanku */
+use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 class RegisterController extends Controller
 {
     /*
@@ -61,12 +65,30 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    // protected function create(array $data)
+
+    /* Menampilkan halaman register */
+    public function register_page()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return view('register_page');
+    }
+
+    /* Membuat User Customer baru */
+    protected function create(Request $req)
+    {
+        // return User::create([
+        //     'name' => $req['name'],
+        //     'email' => $req['email'],
+        //     'phone_number' => $req['phonenumber'],
+        //     'password' => Hash::make($req['password']),
+        // ]);
+        $user = new User();
+        $user->username = $req['username'];
+        $user->email = $req['email'];
+        $user->phone_number = $req['phonenumber'];
+        $user->password = bcrypt($req['password']);
+        $user->jenis_user = 0;
+        $user->created_at = Carbon::now();
+        $user->save();
     }
 }

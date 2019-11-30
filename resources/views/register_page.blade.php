@@ -31,17 +31,17 @@ Exploresia
                   <div class="col-md-6 justify-content-center" style="background-color:white; border-radius: 1rem 0px 0px 1rem;">
                     <div class="row align-items-center">
                       <img src="{{ url('vacation/images/exploresia_logo.png') }}" height="100">
-                      <div style="color:black; font-size:12px;">Login to get the full experience with exploresia</div>
+                      <div style="color:black; font-size:12px;">Register to get the full experience with exploresia</div>
                     </div>
-                    <div class="row align-items-center">
-                      <form method="post" action="{{ route('login') }}">
-                          {{-- {{ csrf_field() }} --}}
+                    <div class="row">
+                      <form method="post" action="{{ route('register') }}">
                           @csrf
                         <input type="text" class="form-group form-control" name="username" id="username" placeholder="Username" required>
+                        <input type="email" class="form-group form-control" name="email" id="email" placeholder="Email" required>
+                        <input type="text" class="form-group form-control" name="phonenumber" id="phonenumber" placeholder="Phone Number" required>
                         <input type="password" class="form-group form-control" name="password" id="password" placeholder="Password" required>
-                      <button type="submit" class="expl-button">Login</button>
+                      <button type="submit" class="expl-button">Sign Up</button>
                       </form>
-                      <div style="color:black; font-size:12px;">Don't have an account? <a href="{{ route('register_page') }}">Register here!</a></div>
                     </div>
                   </div>
                 </div>
