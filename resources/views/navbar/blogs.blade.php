@@ -31,8 +31,7 @@ active
           {{-- row 1 --}}
           <div class="row justify-content-center">
             @foreach($blogs['data'] as $data)
-            <p style="color:white;">{{ $blogs['i']++ }}</p>
-            @if($blogs['i'] < 3)
+            @if($blogs['i'] < 4)
             <div class="col-md-3 ftco-animate">
               <div class="project-destination">
                 <a href="{{ route('read_post',['id'=>$data->id_post]) }}" class="img" style="background-image: url(vacation/images/place-1.jpg);">
@@ -42,12 +41,10 @@ active
                 </a>
               </div>
             </div>
-            @endif
-            @if($blogs['i'] == 2)
+            @elseif($blogs['i'] == 3)
             </div>
             <div class="row justify-content-center">
-            @endif
-            @if($blogs['i'] < 6)
+            @elseif($blogs['i'] < 7)
             <div class="col-md-3 ftco-animate">
               <div class="project-destination">
                 <a href="{{ route('read_post',['id'=>$data->id_post]) }}" class="img" style="background-image: url(vacation/images/place-1.jpg);">
@@ -59,9 +56,7 @@ active
               </div>
             </div>
             @endif
-            @if($blogs['i'] == 5)
-              @break
-            @endif
+            <p style="color:white;">{{ $blogs['i']++ }}</p>
           @endforeach
           </div>
           {{-- end of row 1 --}}
