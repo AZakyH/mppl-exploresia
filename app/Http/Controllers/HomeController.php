@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/* Tambahanku */
+use App\Post;
+use App\Discover;
+
 class HomeController extends Controller
 {
     /**
@@ -32,11 +36,18 @@ class HomeController extends Controller
     }
     public function discover()
     {
-        return view('navbar.discover');
+        $discover = new Discover();
+        $discover = $discover->show6();
+        
+        return view('navbar.discover', ['discover'=>$discover]);
+        // return view('navbar.discover');
     }
     public function blogs()
     {
-        return view('navbar.blogs');
+        $blog = new Post();
+        $blogs = $blog->show6();
+        
+        return view('navbar.blogs', ['blogs'=>$blogs]);
     }
     public function aboutus()
     {
@@ -45,5 +56,10 @@ class HomeController extends Controller
     public function plan_now()
     {
         return view('plan_now');
+    }
+
+    public function profile()
+    {
+        return view('navbar.profile');
     }
 }

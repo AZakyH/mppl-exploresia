@@ -18,8 +18,9 @@ class CreatePostTable extends Migration
             $table->unsignedInteger('id_user');
             $table->string('judul_post', 50);
             $table->text('isi_post'); //, 16382);    //65535);
-            $table->string('nama_gambar_post', 50);
-            $table->timestamp('post_time');
+            $table->string('nama_gambar_post', 50)->nullable();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
 
             $table->foreign('id_user')->references('id_user')->on('users');
         });
