@@ -55,8 +55,9 @@ class LoginController extends Controller
             {
                 return redirect()->intended();
             }
+            return redirect()->intended();
         }
-
+        
         else {
             return redirect()->back()->with('failmessage', 'Username/Password anda salah!');
         }

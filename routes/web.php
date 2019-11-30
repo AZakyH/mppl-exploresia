@@ -39,6 +39,14 @@ Route::get('plan', 'HomeController@plan_now')->name('plan_now');
 //* User *//
 Route::group(['middleware' => 'App\Http\Middleware\UserMiddleware'], function()
 {
+    /* Halaman 'profile' */
+    Route::get('profile', 'HomeController@profile')->name('profile');
+
+    /* Kelengkapan Blog */
+    Route::get('make_blog', 'BlogController@make_page')->name('make_blog');
+    Route::post('posting', 'BlogController@create')->name('posting');
+    Route::get('/read_post-{id}', 'BlogController@read')->name('read_post');
+
     
 });
 
